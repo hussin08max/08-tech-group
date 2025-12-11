@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useI18n } from "@/lib/i18n/context";
+import { HubSpotForm } from "@/components/hubspot-form";
 import {
   Globe,
   Smartphone,
@@ -110,15 +111,8 @@ export default function OrderPage() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              {/* HubSpot Form - Replace YOUR_PORTAL_ID and YOUR_FORM_ID with your actual values */}
-              <HubSpotForm
-                portalId="YOUR_PORTAL_ID"
-                formId="YOUR_FORM_ID"
-                region="na1"
-              />
-              
               {selectedService && (
-                <div className="mt-4 p-3 bg-blue-50 dark:bg-blue-950 rounded-lg border border-blue-200 dark:border-blue-800">
+                <div className="mb-4 p-3 bg-blue-50 dark:bg-blue-950 rounded-lg border border-blue-200 dark:border-blue-800">
                   <p className="text-sm text-blue-800 dark:text-blue-200">
                     <strong>{t("selectedService")}:</strong> {
                       services.find(s => s.id === selectedService)?.name
@@ -130,10 +124,18 @@ export default function OrderPage() {
                 </div>
               )}
 
+              {/* HubSpot Form Embed - Replace YOUR_PORTAL_ID and YOUR_FORM_ID with your actual values */}
+              <HubSpotForm
+                portalId="YOUR_PORTAL_ID"
+                formId="YOUR_FORM_ID"
+                region="na1"
+              />
+              
               {/* Alternative Tally Form Note */}
               <div className="mt-4 p-4 bg-muted rounded-lg">
                 <p className="text-sm text-muted-foreground">
-                  <strong>Note:</strong> To use HubSpot, replace YOUR_PORTAL_ID and YOUR_FORM_ID above. For Tally, replace the HubSpotForm component with your Tally embed code.
+                  <strong>Note:</strong> To use HubSpot, replace YOUR_PORTAL_ID and YOUR_FORM_ID above. 
+                  For Tally, replace the HubSpotForm component with your Tally embed code.
                   Make sure your form includes fields for: Name, Email, Phone, Service Type, Project Details, Budget, and File Upload (optional).
                 </p>
               </div>

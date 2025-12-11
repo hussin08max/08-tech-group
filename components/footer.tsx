@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Facebook, Instagram, Twitter, Linkedin, Mail, Phone } from "lucide-react";
@@ -9,22 +8,9 @@ import { useI18n } from "@/lib/i18n/context";
 export function Footer() {
   const { t } = useI18n();
   const currentYear = new Date().getFullYear();
-  const [footerText, setFooterText] = useState(
-    "Premium digital services for businesses across the UAE. We help you grow online."
-  );
-
-  useEffect(() => {
-    fetch("/api/settings")
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.footerText) {
-          setFooterText(data.footerText);
-        }
-      })
-      .catch(() => {
-        // Keep default text if API fails
-      });
-  }, []);
+  
+  // Static footer text - can be updated directly in this file
+  const footerText = "08 Tech Group Premium digital services for businesses across the UAE. We help you grow online.";
 
   const services = [
     { href: "/services#web-dev", label: "Web Development" },
