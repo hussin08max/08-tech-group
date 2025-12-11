@@ -6,6 +6,7 @@ const nextConfig = {
   },
   output: 'export', // Enable static export
   trailingSlash: true, // Add trailing slashes for static hosting
+  distDir: 'out', // Next.js output directory (will be copied to dist)
 }
 
 module.exports = nextConfig

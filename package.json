@@ -4,10 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "export": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "build": "next build && npm run copy-to-dist",
+    "copy-to-dist": "node scripts/copy-to-dist.js",
+    "export": "next build && npm run copy-to-dist",
+    "lint": "next lint",
+    "clean": "node scripts/clean.js"
   },
   "dependencies": {
     "react": "^19.0.0",
