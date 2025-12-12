@@ -80,7 +80,7 @@ export default function AboutPage() {
             { icon: Heart, titleKey: "integrity", descKey: "integrityDesc" },
           ].map((value, index) => (
             <motion.div
-              key={value.title}
+              key={value.titleKey}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

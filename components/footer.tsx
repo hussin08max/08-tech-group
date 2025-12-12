@@ -100,8 +100,8 @@ export function Footer() {
             <ul className="space-y-3">
               <li className="flex items-center space-x-2 rtl:space-x-reverse text-sm text-muted-foreground">
                 <Mail className="h-4 w-4" />
-                <a href="mailto:info@uaedigital.ae" className="hover:text-primary transition-colors">
-                  info@uaedigital.ae
+                <a href="mailto:info@08techgroup.com" className="hover:text-primary transition-colors">
+                  info@08techgroup.com
                 </a>
               </li>
               <li className="flex items-center space-x-2 rtl:space-x-reverse text-sm text-muted-foreground">
@@ -115,7 +115,7 @@ export function Footer() {
         </div>
 
         <div className="border-t mt-8 pt-8 text-center text-sm text-muted-foreground">
-          <p>© {currentYear} UAE Digital Services Agency. {t("allRightsReserved")}</p>
+          <p>© 2025 08 Tech Group. All rights reserved.</p>
         </div>
       </div>
     </footer>

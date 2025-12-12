@@ -94,7 +94,7 @@ export default function ThankYouPage() {
                 <h3 className="font-semibold">{t("needImmediateAssistance")}</h3>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Button asChild variant="outline" className="flex-1">
-                    <a href="mailto:info@uaedigital.ae">
+                    <a href="mailto:info@08techgroup.com">
                       <Mail className="h-4 w-4 mr-2 rtl:ml-2 rtl:mr-0" />
                       {t("emailUs")}
                     </a>

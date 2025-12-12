@@ -49,7 +49,7 @@ export default function Home() {
             className="text-center max-w-4xl mx-auto"
           >
             <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
-              {t("heroTitle")}
+              08 Tech Group - {t("heroTitle")}
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
               {t("heroSubtitle")}
@@ -86,7 +86,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { icon: Globe, titleKey: "webDevelopment", descKey: "webDevDesc" },
-              { icon: Smartphone, titleKey: "mobileApps", descKey: "mobileAppsDesc" },
+              // Hidden services: mobileApps, uiUxDesign, branding, maintenancePlans, emailCampaigns
               { icon: Search, titleKey: "seo", descKey: "seoDesc" },
               { icon: TrendingUp, titleKey: "digitalMarketing", descKey: "digitalMarketingDesc" },
               { icon: Instagram, titleKey: "socialMediaManagement", descKey: "socialMediaDesc" },
@@ -195,19 +195,19 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                name: "Ahmed Al Maktoum",
+                name: "أحمد عبد الله",
                 role: "CEO, Tech Startup",
                 content: "Outstanding service! Our website traffic increased by 300% in just 3 months.",
                 rating: 5,
               },
               {
-                name: "Sarah Johnson",
+                name: "سارة حسن",
                 role: "Marketing Director",
                 content: "Professional team with deep expertise. Highly recommended for any business in UAE.",
                 rating: 5,
               },
               {
-                name: "Mohammed Hassan",
+                name: "محمد النجار",
                 role: "Business Owner",
                 content: "They delivered exactly what they promised. Our mobile app is a huge success!",
                 rating: 5,
@@ -309,7 +309,7 @@ export default function Home() {
               <Button asChild size="lg" variant="secondary" className="text-lg">
                 <Link href="/contact">{t("contactUs")}</Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="text-lg border-white text-white hover:bg-white hover:text-blue-600">
+              <Button asChild size="lg" variant="outline" className="text-lg border-white text-blue-600 bg-white hover:bg-white hover:text-blue-700">
                 <Link href="/order">{t("orderNow")}</Link>
               </Button>
             </div>

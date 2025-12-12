@@ -118,7 +118,7 @@ const pricingPackages = [
         features: [
           "Multi-platform management",
           "Paid advertising",
-          "Email campaigns",
+          // "Email campaigns", // Hidden
           "Analytics & reporting",
           "Content calendar",
         ],
@@ -139,49 +139,50 @@ const pricingPackages = [
       },
     ],
   },
-  {
-    name: "Mobile App Development",
-    packages: [
-      {
-        tier: "Basic",
-        price: "AED 15,000",
-        description: "Simple mobile application",
-        features: [
-          "iOS or Android",
-          "Basic features",
-          "App store submission",
-          "2 months support",
-        ],
-        paymentLink: "https://stripe.com/pay/mobile-basic",
-      },
-      {
-        tier: "Professional",
-        price: "AED 35,000",
-        description: "Full-featured app",
-        features: [
-          "iOS & Android",
-          "Advanced features",
-          "Backend integration",
-          "Push notifications",
-          "6 months support",
-        ],
-        paymentLink: "https://stripe.com/pay/mobile-pro",
-      },
-      {
-        tier: "Enterprise",
-        price: "AED 75,000+",
-        description: "Complex app solution",
-        features: [
-          "Native development",
-          "Custom features",
-          "Full backend",
-          "Analytics & tracking",
-          "12 months support",
-        ],
-        paymentLink: "https://stripe.com/pay/mobile-enterprise",
-      },
-    ],
-  },
+  // Hidden: Mobile App Development
+  // {
+  //   name: "Mobile App Development",
+  //   packages: [
+  //     {
+  //       tier: "Basic",
+  //       price: "AED 15,000",
+  //       description: "Simple mobile application",
+  //       features: [
+  //         "iOS or Android",
+  //         "Basic features",
+  //         "App store submission",
+  //         "2 months support",
+  //       ],
+  //       paymentLink: "https://stripe.com/pay/mobile-basic",
+  //     },
+  //     {
+  //       tier: "Professional",
+  //       price: "AED 35,000",
+  //       description: "Full-featured app",
+  //       features: [
+  //         "iOS & Android",
+  //         "Advanced features",
+  //         "Backend integration",
+  //         "Push notifications",
+  //         "6 months support",
+  //       ],
+  //       paymentLink: "https://stripe.com/pay/mobile-pro",
+  //     },
+  //     {
+  //       tier: "Enterprise",
+  //       price: "AED 75,000+",
+  //       description: "Complex app solution",
+  //       features: [
+  //         "Native development",
+  //         "Custom features",
+  //         "Full backend",
+  //         "Analytics & tracking",
+  //         "12 months support",
+  //       ],
+  //       paymentLink: "https://stripe.com/pay/mobile-enterprise",
+  //     },
+  //   ],
+  // },
   {
     name: "Hosting & Maintenance",
     packages: [

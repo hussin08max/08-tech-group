@@ -39,22 +39,7 @@ export default function ContactPage() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              {/* HubSpot Form Embed - Replace YOUR_PORTAL_ID and YOUR_FORM_ID with your actual values */}
-              <HubSpotForm
-                portalId="YOUR_PORTAL_ID"
-                formId="YOUR_FORM_ID"
-                region="na1"
-              />
-              {/* Alternative: Tally Form Embed */}
-              <div className="mt-4 p-4 bg-muted rounded-lg">
-                <p className="text-sm text-muted-foreground mb-2">
-                  <strong>Note:</strong> To use HubSpot, replace YOUR_PORTAL_ID and YOUR_FORM_ID above. 
-                  For Tally, replace the HubSpotForm component with your Tally embed code.
-                </p>
-                <p className="text-xs text-muted-foreground">
-                  Example Tally: Use iframe with src="https://tally.so/embed/..." or use Tally's script embed.
-                </p>
-              </div>
+              <HubSpotForm />
             </CardContent>
           </Card>
         </motion.div>
@@ -77,8 +62,8 @@ export default function ContactPage() {
                 <Mail className="h-5 w-5 text-primary mt-1" />
                 <div>
                   <p className="font-semibold">{t("email")}</p>
-                  <a href="mailto:info@uaedigital.ae" className="text-muted-foreground hover:text-primary transition-colors">
-                    info@uaedigital.ae
+                  <a href="mailto:info@08techgroup.com" className="text-muted-foreground hover:text-primary transition-colors">
+                    info@08techgroup.com
                   </a>
                 </div>
               </div>

@@ -27,9 +27,6 @@ export const translations: Record<Language, Record<string, string>> = {
     
     // Footer
     company: "Company",
-    aboutUs: "About Us",
-    services: "Services",
-    contact: "Contact",
     allRightsReserved: "All rights reserved",
     
     // Contact
@@ -182,9 +179,6 @@ export const translations: Record<Language, Record<string, string>> = {
     
     // Footer
     company: "الشركة",
-    aboutUs: "من نحن",
-    services: "الخدمات",
-    contact: "اتصل بنا",
     allRightsReserved: "جميع الحقوق محفوظة",
     
     // Contact
@@ -337,9 +331,6 @@ export const translations: Record<Language, Record<string, string>> = {
     
     // Footer
     company: "कंपनी",
-    aboutUs: "हमारे बारे में",
-    services: "सेवाएं",
-    contact: "संपर्क करें",
     allRightsReserved: "सभी अधिकार सुरक्षित",
     
     // Contact
@@ -382,9 +373,6 @@ export const translations: Record<Language, Record<string, string>> = {
     
     // Footer
     company: "Entreprise",
-    aboutUs: "À propos de nous",
-    services: "Services",
-    contact: "Contact",
     allRightsReserved: "Tous droits réservés",
     
     // Contact
@@ -427,9 +415,6 @@ export const translations: Record<Language, Record<string, string>> = {
     
     // Footer
     company: "Empresa",
-    aboutUs: "Acerca de nosotros",
-    services: "Servicios",
-    contact: "Contacto",
     allRightsReserved: "Todos los derechos reservados",
     
     // Contact
@@ -472,9 +457,6 @@ export const translations: Record<Language, Record<string, string>> = {
     
     // Footer
     company: "公司",
-    aboutUs: "关于我们",
-    services: "服务",
-    contact: "联系",
     allRightsReserved: "版权所有",
     
     // Contact
@@ -517,9 +499,6 @@ export const translations: Record<Language, Record<string, string>> = {
     
     // Footer
     company: "کمپنی",
-    aboutUs: "ہمارے بارے میں",
-    services: "سروسز",
-    contact: "رابطہ",
     allRightsReserved: "جملہ حقوق محفوظ ہیں",
     
     // Contact

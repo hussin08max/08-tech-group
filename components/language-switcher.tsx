@@ -4,8 +4,19 @@ import { useState, useRef, useEffect } from "react";
 import { useI18n } from "@/lib/i18n/context";
 import { languages } from "@/lib/i18n/translations";
 import { Button } from "@/components/ui/button";
-import { Globe } from "lucide-react";
+import ReactCountryFlag from "react-country-flag";
 import { motion, AnimatePresence } from "framer-motion";
+
+// Map language codes to country codes for flags
+const languageToCountry: Record<string, string> = {
+  en: "GB", // English - Great Britain
+  ar: "SA", // Arabic - Saudi Arabia
+  hi: "IN", // Hindi - India
+  fr: "FR", // French - France
+  es: "ES", // Spanish - Spain
+  zh: "CN", // Chinese - China
+  ur: "PK", // Urdu - Pakistan
+};
 
 export function LanguageSwitcher() {
   const { language, setLanguage } = useI18n();
@@ -36,14 +47,19 @@ export function LanguageSwitcher() {
         variant="ghost"
         size="sm"
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-accent transition-all duration-200 border border-transparent hover:border-border"
+        className="flex items-center justify-center p-2 rounded-lg hover:bg-accent transition-all duration-200 border border-transparent hover:border-border w-10 h-10"
         aria-label="Change language"
       >
-        <span className="text-2xl leading-none">{currentLanguage?.flag}</span>
-        <span className="text-xs font-medium hidden sm:inline-block min-w-[60px] text-left">
-          {currentLanguage?.name}
-        </span>
-        <Globe className="h-4 w-4 opacity-70" />
+        <ReactCountryFlag
+          countryCode={languageToCountry[language] || "GB"}
+          svg
+          style={{
+            width: "24px",
+            height: "24px",
+            borderRadius: "4px",
+          }}
+          title={currentLanguage?.name}
+        />
       </Button>
 
       <AnimatePresence>
@@ -77,7 +93,16 @@ export function LanguageSwitcher() {
                         : ""
                     }`}
                   >
-                    <span className="text-2xl leading-none">{lang.flag}</span>
+                    <ReactCountryFlag
+                      countryCode={languageToCountry[lang.code] || "GB"}
+                      svg
+                      style={{
+                        width: "24px",
+                        height: "24px",
+                        borderRadius: "4px",
+                      }}
+                      title={lang.name}
+                    />
                     <span className="flex-1">{lang.name}</span>
                     {language === lang.code && (
                       <span className="text-primary text-lg">✓</span>

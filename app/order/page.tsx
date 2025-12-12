@@ -27,21 +27,26 @@ import { useState } from "react";
 
 const services = [
   { id: "web-dev", icon: Globe, name: "Web Development" },
-  { id: "mobile", icon: Smartphone, name: "Mobile Apps" },
+  // Hidden: mobile apps
+  // { id: "mobile", icon: Smartphone, name: "Mobile Apps" },
   { id: "seo", icon: Search, name: "SEO Services" },
   { id: "marketing", icon: TrendingUp, name: "Digital Marketing" },
   { id: "social", icon: Instagram, name: "Social Media Management" },
   { id: "content", icon: FileText, name: "Content Creation" },
-  { id: "branding", icon: Palette, name: "Branding" },
-  { id: "ui-ux", icon: Layers, name: "UI/UX Design" },
+  // Hidden: branding
+  // { id: "branding", icon: Palette, name: "Branding" },
+  // Hidden: ui-ux
+  // { id: "ui-ux", icon: Layers, name: "UI/UX Design" },
   { id: "ads", icon: Target, name: "Ads Management" },
   { id: "copywriting", icon: Code, name: "Copywriting" },
   { id: "ecommerce", icon: ShoppingCart, name: "E-commerce Setup" },
   { id: "hosting", icon: Server, name: "Hosting Plans" },
-  { id: "maintenance", icon: Wrench, name: "Maintenance Plans" },
+  // Hidden: maintenance plans
+  // { id: "maintenance", icon: Wrench, name: "Maintenance Plans" },
   { id: "whatsapp", icon: MessageSquare, name: "WhatsApp Automation" },
   { id: "crm", icon: Zap, name: "CRM Setup" },
-  { id: "email", icon: Mail, name: "Email Campaigns" },
+  // Hidden: email campaigns
+  // { id: "email", icon: Mail, name: "Email Campaigns" },
   { id: "ai", icon: Zap, name: "AI Tools Development" },
   { id: "automation", icon: Zap, name: "Automation Services" },
 ];
@@ -124,21 +129,7 @@ export default function OrderPage() {
                 </div>
               )}
 
-              {/* HubSpot Form Embed - Replace YOUR_PORTAL_ID and YOUR_FORM_ID with your actual values */}
-              <HubSpotForm
-                portalId="YOUR_PORTAL_ID"
-                formId="YOUR_FORM_ID"
-                region="na1"
-              />
-              
-              {/* Alternative Tally Form Note */}
-              <div className="mt-4 p-4 bg-muted rounded-lg">
-                <p className="text-sm text-muted-foreground">
-                  <strong>Note:</strong> To use HubSpot, replace YOUR_PORTAL_ID and YOUR_FORM_ID above. 
-                  For Tally, replace the HubSpotForm component with your Tally embed code.
-                  Make sure your form includes fields for: Name, Email, Phone, Service Type, Project Details, Budget, and File Upload (optional).
-                </p>
-              </div>
+              <HubSpotForm />
 
               {/* WhatsApp Alternative */}
               <div className="mt-6 p-4 bg-green-50 dark:bg-green-950 rounded-lg border border-green-200 dark:border-green-800">
