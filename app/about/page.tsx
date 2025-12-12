@@ -106,12 +106,12 @@ export default function AboutPage() {
         <h2 className="text-3xl font-bold mb-8 text-center">{t("ourTeam")}</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
-            { name: "Ahmed Al Maktoum", role: "CEO & Founder" },
-            { name: "Sarah Johnson", role: "Head of Development" },
-            { name: "Mohammed Hassan", role: "Head of Marketing" },
+            { nameKey: "teamMember1Name", roleKey: "teamMember1Role" },
+            { nameKey: "teamMember2Name", roleKey: "teamMember2Role" },
+            { nameKey: "teamMember3Name", roleKey: "teamMember3Role" },
           ].map((member, index) => (
             <motion.div
-              key={member.name}
+              key={member.nameKey}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -119,10 +119,10 @@ export default function AboutPage() {
             >
               <Card className="text-center p-6">
                 <div className="w-24 h-24 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold">
-                  {member.name.split(" ").map(n => n[0]).join("")}
+                  {t(member.nameKey).split(" ").map((n: string) => n[0]).join("")}
                 </div>
-                <h3 className="text-lg font-semibold mb-1">{member.name}</h3>
-                <p className="text-sm text-muted-foreground">{member.role}</p>
+                <h3 className="text-lg font-semibold mb-1">{t(member.nameKey)}</h3>
+                <p className="text-sm text-muted-foreground">{t(member.roleKey)}</p>
               </Card>
             </motion.div>
           ))}

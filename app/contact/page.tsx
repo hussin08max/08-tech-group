@@ -81,7 +81,7 @@ export default function ContactPage() {
                 <div>
                   <p className="font-semibold">{t("location")}</p>
                   <p className="text-muted-foreground">
-                    Dubai, United Arab Emirates
+                    {t("locationDubai")}
                   </p>
                 </div>
               </div>

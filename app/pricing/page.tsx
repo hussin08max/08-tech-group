@@ -1,235 +1,110 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import { useI18n } from "@/lib/i18n/context";
 
-const pricingPackages = [
-  {
-    name: "Web Development",
-    packages: [
-      {
-        tier: "Basic",
-        price: "AED 5,000",
-        description: "Perfect for small businesses",
-        features: [
-          "Up to 5 pages",
-          "Responsive design",
-          "Contact form",
-          "Basic SEO",
-          "1 month support",
-        ],
-        paymentLink: "https://stripe.com/pay/web-dev-basic",
-      },
-      {
-        tier: "Professional",
-        price: "AED 12,000",
-        description: "For growing businesses",
-        features: [
-          "Up to 10 pages",
-          "Custom design",
-          "CMS integration",
-          "Advanced SEO",
-          "E-commerce ready",
-          "3 months support",
-        ],
-        paymentLink: "https://stripe.com/pay/web-dev-pro",
-      },
-      {
-        tier: "Enterprise",
-        price: "AED 25,000+",
-        description: "Custom solutions",
-        features: [
-          "Unlimited pages",
-          "Full customization",
-          "Advanced features",
-          "API integrations",
-          "Priority support",
-          "6 months support",
-        ],
-        paymentLink: "https://stripe.com/pay/web-dev-enterprise",
-      },
-    ],
-  },
-  {
-    name: "SEO Services",
-    packages: [
-      {
-        tier: "Starter",
-        price: "AED 2,500/month",
-        description: "Essential SEO optimization",
-        features: [
-          "Keyword research",
-          "On-page optimization",
-          "Monthly reports",
-          "10 keywords targeted",
-        ],
-        paymentLink: "https://stripe.com/pay/seo-starter",
-      },
-      {
-        tier: "Growth",
-        price: "AED 5,000/month",
-        description: "Comprehensive SEO strategy",
-        features: [
-          "Advanced keyword research",
-          "Link building",
-          "Content optimization",
-          "30 keywords targeted",
-          "Competitor analysis",
-        ],
-        paymentLink: "https://stripe.com/pay/seo-growth",
-      },
-      {
-        tier: "Enterprise",
-        price: "AED 10,000+/month",
-        description: "Full SEO management",
-        features: [
-          "Complete SEO audit",
-          "Unlimited keywords",
-          "Technical SEO",
-          "Local SEO",
-          "Dedicated account manager",
-        ],
-        paymentLink: "https://stripe.com/pay/seo-enterprise",
-      },
-    ],
-  },
-  {
-    name: "Digital Marketing",
-    packages: [
-      {
-        tier: "Essential",
-        price: "AED 3,500/month",
-        description: "Basic marketing services",
-        features: [
-          "Social media management",
-          "Content creation",
-          "Monthly strategy",
-          "2 platforms",
-        ],
-        paymentLink: "https://stripe.com/pay/marketing-essential",
-      },
-      {
-        tier: "Advanced",
-        price: "AED 7,500/month",
-        description: "Full marketing suite",
-        features: [
-          "Multi-platform management",
-          "Paid advertising",
-          // "Email campaigns", // Hidden
-          "Analytics & reporting",
-          "Content calendar",
-        ],
-        paymentLink: "https://stripe.com/pay/marketing-advanced",
-      },
-      {
-        tier: "Complete",
-        price: "AED 15,000+/month",
-        description: "End-to-end marketing",
-        features: [
-          "All platforms",
-          "Advanced campaigns",
-          "Marketing automation",
-          "Dedicated team",
-          "Custom strategies",
-        ],
-        paymentLink: "https://stripe.com/pay/marketing-complete",
-      },
-    ],
-  },
-  // Hidden: Mobile App Development
-  // {
-  //   name: "Mobile App Development",
-  //   packages: [
-  //     {
-  //       tier: "Basic",
-  //       price: "AED 15,000",
-  //       description: "Simple mobile application",
-  //       features: [
-  //         "iOS or Android",
-  //         "Basic features",
-  //         "App store submission",
-  //         "2 months support",
-  //       ],
-  //       paymentLink: "https://stripe.com/pay/mobile-basic",
-  //     },
-  //     {
-  //       tier: "Professional",
-  //       price: "AED 35,000",
-  //       description: "Full-featured app",
-  //       features: [
-  //         "iOS & Android",
-  //         "Advanced features",
-  //         "Backend integration",
-  //         "Push notifications",
-  //         "6 months support",
-  //       ],
-  //       paymentLink: "https://stripe.com/pay/mobile-pro",
-  //     },
-  //     {
-  //       tier: "Enterprise",
-  //       price: "AED 75,000+",
-  //       description: "Complex app solution",
-  //       features: [
-  //         "Native development",
-  //         "Custom features",
-  //         "Full backend",
-  //         "Analytics & tracking",
-  //         "12 months support",
-  //       ],
-  //       paymentLink: "https://stripe.com/pay/mobile-enterprise",
-  //     },
-  //   ],
-  // },
-  {
-    name: "Hosting & Maintenance",
-    packages: [
-      {
-        tier: "Basic",
-        price: "AED 500/month",
-        description: "Essential hosting",
-        features: [
-          "Shared hosting",
-          "SSL certificate",
-          "Monthly backups",
-          "Email support",
-        ],
-        paymentLink: "https://stripe.com/pay/hosting-basic",
-      },
-      {
-        tier: "Professional",
-        price: "AED 1,500/month",
-        description: "Managed hosting",
-        features: [
-          "Cloud hosting",
-          "Daily backups",
-          "Performance monitoring",
-          "Priority support",
-          "Security updates",
-        ],
-        paymentLink: "https://stripe.com/pay/hosting-pro",
-      },
-      {
-        tier: "Enterprise",
-        price: "AED 3,500+/month",
-        description: "Dedicated hosting",
-        features: [
-          "Dedicated server",
-          "24/7 monitoring",
-          "Custom configurations",
-          "Dedicated support",
-          "SLA guarantee",
-        ],
-        paymentLink: "https://stripe.com/pay/hosting-enterprise",
-      },
-    ],
-  },
-];
-
 export default function PricingPage() {
   const { t } = useI18n();
+  
+  const pricingPackages = [
+    {
+      nameKey: "pricingWebDevName",
+      packages: [
+        {
+          tierKey: "pricingWebDevBasicTier",
+          priceAmount: "500",
+          descKey: "pricingWebDevBasicDesc",
+          featureKeys: ["pricingWebDevBasicFeature1", "pricingWebDevBasicFeature2", "pricingWebDevBasicFeature3", "pricingWebDevBasicFeature4", "pricingWebDevBasicFeature5"],
+        },
+        {
+          tierKey: "pricingWebDevProfessionalTier",
+          priceAmount: "2000",
+          descKey: "pricingWebDevProfessionalDesc",
+          featureKeys: ["pricingWebDevProfessionalFeature1", "pricingWebDevProfessionalFeature2", "pricingWebDevProfessionalFeature3", "pricingWebDevProfessionalFeature4", "pricingWebDevProfessionalFeature5", "pricingWebDevProfessionalFeature6"],
+        },
+        {
+          tierKey: "pricingWebDevEnterpriseTier",
+          priceAmount: "5000",
+          descKey: "pricingWebDevEnterpriseDesc",
+          featureKeys: ["pricingWebDevEnterpriseFeature1", "pricingWebDevEnterpriseFeature2", "pricingWebDevEnterpriseFeature3", "pricingWebDevEnterpriseFeature4", "pricingWebDevEnterpriseFeature5", "pricingWebDevEnterpriseFeature6"],
+        },
+      ],
+    },
+    {
+      nameKey: "pricingSEOName",
+      packages: [
+        {
+          tierKey: "pricingSEOStarterTier",
+          priceAmount: "500",
+          descKey: "pricingSEOStarterDesc",
+          featureKeys: ["pricingSEOStarterFeature1", "pricingSEOStarterFeature2", "pricingSEOStarterFeature3", "pricingSEOStarterFeature4"],
+        },
+        {
+          tierKey: "pricingSEOGrowthTier",
+          priceAmount: "2500",
+          descKey: "pricingSEOGrowthDesc",
+          featureKeys: ["pricingSEOGrowthFeature1", "pricingSEOGrowthFeature2", "pricingSEOGrowthFeature3", "pricingSEOGrowthFeature4", "pricingSEOGrowthFeature5"],
+        },
+        {
+          tierKey: "pricingSEOEnterpriseTier",
+          priceAmount: "7500",
+          descKey: "pricingSEOEnterpriseDesc",
+          featureKeys: ["pricingSEOEnterpriseFeature1", "pricingSEOEnterpriseFeature2", "pricingSEOEnterpriseFeature3", "pricingSEOEnterpriseFeature4", "pricingSEOEnterpriseFeature5"],
+        },
+      ],
+    },
+    {
+      nameKey: "pricingDigitalMarketingName",
+      packages: [
+        {
+          tierKey: "pricingDigitalMarketingEssentialTier",
+          priceAmount: "1500",
+          descKey: "pricingDigitalMarketingEssentialDesc",
+          featureKeys: ["pricingDigitalMarketingEssentialFeature1", "pricingDigitalMarketingEssentialFeature2", "pricingDigitalMarketingEssentialFeature3", "pricingDigitalMarketingEssentialFeature4"],
+        },
+        {
+          tierKey: "pricingDigitalMarketingAdvancedTier",
+          priceAmount: "4000",
+          descKey: "pricingDigitalMarketingAdvancedDesc",
+          featureKeys: ["pricingDigitalMarketingAdvancedFeature1", "pricingDigitalMarketingAdvancedFeature2", "pricingDigitalMarketingAdvancedFeature3", "pricingDigitalMarketingAdvancedFeature4"],
+        },
+        {
+          tierKey: "pricingDigitalMarketingCompleteTier",
+          priceAmount: "8000",
+          descKey: "pricingDigitalMarketingCompleteDesc",
+          featureKeys: ["pricingDigitalMarketingCompleteFeature1", "pricingDigitalMarketingCompleteFeature2", "pricingDigitalMarketingCompleteFeature3", "pricingDigitalMarketingCompleteFeature4", "pricingDigitalMarketingCompleteFeature5"],
+        },
+      ],
+    },
+    {
+      nameKey: "pricingHostingName",
+      packages: [
+        {
+          tierKey: "pricingHostingBasicTier",
+          priceAmount: "1000",
+          descKey: "pricingHostingBasicDesc",
+          featureKeys: ["pricingHostingBasicFeature1", "pricingHostingBasicFeature2", "pricingHostingBasicFeature3", "pricingHostingBasicFeature4"],
+        },
+        {
+          tierKey: "pricingHostingProfessionalTier",
+          priceAmount: "3000",
+          descKey: "pricingHostingProfessionalDesc",
+          featureKeys: ["pricingHostingProfessionalFeature1", "pricingHostingProfessionalFeature2", "pricingHostingProfessionalFeature3", "pricingHostingProfessionalFeature4", "pricingHostingProfessionalFeature5"],
+        },
+        {
+          tierKey: "pricingHostingEnterpriseTier",
+          priceAmount: "5000",
+          descKey: "pricingHostingEnterpriseDesc",
+          featureKeys: ["pricingHostingEnterpriseFeature1", "pricingHostingEnterpriseFeature2", "pricingHostingEnterpriseFeature3", "pricingHostingEnterpriseFeature4", "pricingHostingEnterpriseFeature5"],
+        },
+      ],
+    },
+  ];
+
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <motion.div
@@ -246,7 +121,7 @@ export default function PricingPage() {
 
       <div className="space-y-16">
         {pricingPackages.map((service, serviceIndex) => (
-          <div key={service.name}>
+          <div key={service.nameKey}>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -254,48 +129,54 @@ export default function PricingPage() {
               transition={{ duration: 0.6 }}
               className="text-3xl font-bold mb-8 text-center"
             >
-              {service.name}
+              {t(service.nameKey)}
             </motion.h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {service.packages.map((pkg, pkgIndex) => (
-                <motion.div
-                  key={pkg.tier}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: pkgIndex * 0.1 }}
-                  className={pkg.tier === "Professional" || pkg.tier === "Advanced" || pkg.tier === "Growth" ? "md:-mt-4" : ""}
-                >
-                  <Card className={`h-full flex flex-col ${pkg.tier === "Professional" || pkg.tier === "Advanced" || pkg.tier === "Growth" ? "border-primary border-2" : ""}`}>
-                    <CardHeader>
-                      <CardTitle className="text-2xl">{pkg.tier}</CardTitle>
-                      <div className="text-3xl font-bold mt-2">{pkg.price}</div>
-                      <CardDescription>{pkg.description}</CardDescription>
-                    </CardHeader>
-                    <CardContent className="flex-grow">
-                      <ul className="space-y-3">
-                        {pkg.features.map((feature, idx) => (
-                          <li key={idx} className="flex items-start">
-                            <Check className="h-5 w-5 text-primary mr-2 flex-shrink-0 mt-0.5" />
-                            <span className="text-sm">{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </CardContent>
-                    <CardFooter>
-                      <Button
-                        asChild
-                        className="w-full"
-                        variant={pkg.tier === "Professional" || pkg.tier === "Advanced" || pkg.tier === "Growth" ? "default" : "outline"}
-                      >
-                        <a href={pkg.paymentLink} target="_blank" rel="noopener noreferrer">
-                          {t("payNow")}
-                        </a>
-                      </Button>
-                    </CardFooter>
-                  </Card>
-                </motion.div>
-              ))}
+              {service.packages.map((pkg, pkgIndex) => {
+                const tierText = t(pkg.tierKey);
+                const isHighlighted = tierText === t("pricingWebDevProfessionalTier") || tierText === t("pricingDigitalMarketingAdvancedTier") || tierText === t("pricingSEOGrowthTier");
+                return (
+                  <motion.div
+                    key={pkg.tierKey}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: pkgIndex * 0.1 }}
+                    className={isHighlighted ? "md:-mt-4" : ""}
+                  >
+                    <Card className={`h-full flex flex-col ${isHighlighted ? "border-primary border-2" : ""}`}>
+                      <CardHeader>
+                        <CardTitle className="text-2xl">{tierText}</CardTitle>
+                        <div className="text-3xl font-bold mt-2">
+                          {t("startsFrom")} {pkg.priceAmount} {t("currency")}
+                        </div>
+                        <CardDescription>{t(pkg.descKey)}</CardDescription>
+                      </CardHeader>
+                      <CardContent className="flex-grow">
+                        <ul className="space-y-3">
+                          {pkg.featureKeys.map((featureKey, idx) => (
+                            <li key={idx} className="flex items-start">
+                              <Check className="h-5 w-5 text-primary mr-2 flex-shrink-0 mt-0.5" />
+                              <span className="text-sm">{t(featureKey)}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </CardContent>
+                      <CardFooter>
+                        <Button
+                          asChild
+                          className="w-full"
+                          variant={isHighlighted ? "default" : "outline"}
+                        >
+                          <Link href="/order">
+                            {t("orderNow")}
+                          </Link>
+                        </Button>
+                      </CardFooter>
+                    </Card>
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         ))}

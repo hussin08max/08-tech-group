@@ -157,8 +157,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Pricing Preview - Hidden */}
-      {/* <section className="py-20 bg-background">
+      {/* Pricing Preview */}
+      <section className="py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -178,7 +178,7 @@ export default function Home() {
             </Button>
           </div>
         </div>
-      </section> */}
+      </section>
 
       {/* Testimonials */}
       <section className="py-20 bg-muted/50">
@@ -196,20 +196,20 @@ export default function Home() {
             {[
               {
                 name: "أحمد عبد الله",
-                role: "CEO, Tech Startup",
-                content: "Outstanding service! Our website traffic increased by 300% in just 3 months.",
+                roleKey: "testimonial1Role",
+                contentKey: "testimonial1Content",
                 rating: 5,
               },
               {
                 name: "سارة حسن",
-                role: "Marketing Director",
-                content: "Professional team with deep expertise. Highly recommended for any business in UAE.",
+                roleKey: "testimonial2Role",
+                contentKey: "testimonial2Content",
                 rating: 5,
               },
               {
                 name: "محمد النجار",
-                role: "Business Owner",
-                content: "They delivered exactly what they promised. Our mobile app is a huge success!",
+                roleKey: "testimonial3Role",
+                contentKey: "testimonial3Content",
                 rating: 5,
               },
             ].map((testimonial, index) => (
@@ -227,11 +227,11 @@ export default function Home() {
                         <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
                       ))}
                     </div>
-                    <CardDescription className="text-base">{testimonial.content}</CardDescription>
+                    <CardDescription className="text-base">{t(testimonial.contentKey)}</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <div className="font-semibold">{testimonial.name}</div>
-                    <div className="text-sm text-muted-foreground">{testimonial.role}</div>
+                    <div className="text-sm text-muted-foreground">{t(testimonial.roleKey)}</div>
                   </CardContent>
                 </Card>
               </motion.div>

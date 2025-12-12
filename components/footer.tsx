@@ -9,21 +9,17 @@ export function Footer() {
   const { t } = useI18n();
   const currentYear = new Date().getFullYear();
   
-  // Static footer text - can be updated directly in this file
-  const footerText = "08 Tech Group Premium digital services for businesses across the UAE. We help you grow online.";
-
   const services = [
-    { href: "/services#web-dev", label: "Web Development" },
-    { href: "/services#mobile", label: "Mobile Apps" },
-    { href: "/services#seo", label: "SEO" },
-    { href: "/services#marketing", label: "Digital Marketing" },
+    { href: "/services#web-dev", labelKey: "footerServiceWebDev" },
+    { href: "/services#mobile", labelKey: "footerServiceMobileApps" },
+    { href: "/services#seo", labelKey: "footerServiceSEO" },
+    { href: "/services#marketing", labelKey: "footerServiceDigitalMarketing" },
   ];
 
   const company = [
     { href: "/about", label: t("aboutUs") },
     { href: "/contact", label: t("contact") },
-    // Hidden: pricing page
-    // { href: "/pricing", label: t("pricing") },
+    { href: "/pricing", label: t("pricing") },
     { href: "/order", label: t("orderNow") },
   ];
 
@@ -43,7 +39,7 @@ export function Footer() {
               unoptimized
             />
             <p className="text-sm text-muted-foreground">
-              {footerText}
+              {t("footerDescription")}
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
@@ -71,7 +67,7 @@ export function Footer() {
                     href={service.href}
                     className="text-sm text-muted-foreground hover:text-primary transition-colors"
                   >
-                    {service.label}
+                    {t(service.labelKey)}
                   </Link>
                 </li>
               ))}
