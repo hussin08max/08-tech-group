@@ -22,7 +22,8 @@ export function Footer() {
   const company = [
     { href: "/about", label: t("aboutUs") },
     { href: "/contact", label: t("contact") },
-    { href: "/pricing", label: t("pricing") },
+    // Hidden: pricing page
+    // { href: "/pricing", label: t("pricing") },
     { href: "/order", label: t("orderNow") },
   ];
 

@@ -23,7 +23,8 @@ export function Navbar() {
   const navLinks = [
     { href: "/", label: t("home") },
     { href: "/services", label: t("services") },
-    { href: "/pricing", label: t("pricing") },
+    // Hidden: pricing page
+    // { href: "/pricing", label: t("pricing") },
     { href: "/about", label: t("about") },
     { href: "/contact", label: t("contact") },
   ];

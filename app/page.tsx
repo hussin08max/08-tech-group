@@ -157,8 +157,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Pricing Preview */}
-      <section className="py-20 bg-background">
+      {/* Pricing Preview - Hidden */}
+      {/* <section className="py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -178,7 +178,7 @@ export default function Home() {
             </Button>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Testimonials */}
       <section className="py-20 bg-muted/50">
