@@ -7,25 +7,22 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { motion, AnimatePresence } from "framer-motion";
-import { useI18n } from "@/lib/i18n/context";
-import { LanguageSwitcher } from "@/components/language-switcher";
-
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
-  const { t } = useI18n();
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
   const navLinks = [
-    { href: "/", label: t("home") },
-    { href: "/services", label: t("services") },
-    { href: "/pricing", label: t("pricing") },
-    { href: "/about", label: t("about") },
-    { href: "/contact", label: t("contact") },
+    { href: "/", label: "الرئيسية" },
+    { href: "/build-sudan-with-code", label: "المبادرة" },
+    { href: "/projects-in-progress", label: "قيد التنفيذ" },
+    { href: "/completed-projects", label: "المشاريع" },
+    { href: "/about", label: "من نحن" },
+    { href: "/contact", label: "تواصل معنا" },
   ];
 
   return (
@@ -56,7 +53,6 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <LanguageSwitcher />
             <Button
               variant="ghost"
               size="icon"
@@ -70,13 +66,12 @@ export function Navbar() {
               )}
             </Button>
             <Button asChild>
-              <Link href="/order">{t("orderNow")}</Link>
+              <Link href="/build-sudan-with-code#register">قدّم فكرة</Link>
             </Button>
           </div>
 
           {/* Mobile menu button */}
           <div className="flex md:hidden items-center space-x-2 rtl:space-x-reverse">
-            <LanguageSwitcher />
             <Button
               variant="ghost"
               size="icon"
@@ -122,8 +117,8 @@ export function Navbar() {
                 </Link>
               ))}
               <Button asChild className="w-full mt-4">
-                <Link href="/order" onClick={() => setIsOpen(false)}>
-                  {t("orderNow")}
+                <Link href="/build-sudan-with-code#register" onClick={() => setIsOpen(false)}>
+                  قدّم فكرة
                 </Link>
               </Button>
             </div>

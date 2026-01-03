@@ -6,25 +6,27 @@ import { I18nProvider } from "@/lib/i18n/context";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { WhatsAppButton } from "@/components/whatsapp-button";
+import { BottomNav } from "@/components/bottom-nav";
+import { PWAInstaller } from "@/components/pwa-installer";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Digital Services Agency - UAE | Web Development, SEO, Marketing",
-  description: "Premium digital services in the UAE. Web development, mobile apps, SEO, digital marketing, social media, branding, and more. Trusted by businesses across the Emirates.",
-  keywords: "UAE digital agency, web development UAE, SEO Dubai, digital marketing, mobile apps, social media management",
-  authors: [{ name: "UAE Digital Services Agency" }],
+  title: "نبني السودان بالكود - مبادرة تقنية سودانية تطوعية",
+  description: "مبادرة تطوعية غير ربحية هدفها استخدام التقنية في خدمة المجتمع السوداني. حلول تقنية مجانية لأفراد ومؤسسات تحتاج دعم تقني.",
+  keywords: "مبادرة سودانية, تقنية تطوعية, برمجة مجانية, بناء السودان, 08 Tech Group",
+  authors: [{ name: "08 Tech Group" }],
   openGraph: {
-    title: "Digital Services Agency - UAE",
-    description: "Premium digital services in the UAE. Web development, SEO, digital marketing, and more.",
+    title: "نبني السودان بالكود - مبادرة تقنية سودانية",
+    description: "مبادرة تطوعية غير ربحية هدفها استخدام التقنية في خدمة المجتمع السوداني",
     type: "website",
-    locale: "en_AE",
-    siteName: "UAE Digital Services Agency",
+    locale: "ar_SD",
+    siteName: "نبني السودان بالكود",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Digital Services Agency - UAE",
-    description: "Premium digital services in the UAE",
+    title: "نبني السودان بالكود",
+    description: "مبادرة تقنية سودانية تطوعية غير ربحية",
   },
   robots: {
     index: true,
@@ -38,8 +40,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning dir="ltr">
+    <html lang="ar" suppressHydrationWarning dir="rtl">
       <head>
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#2d6a4f" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="نبني السودان" />
         {/* Google Analytics 4 */}
         <script
           async
@@ -71,17 +78,19 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={inter.className} suppressHydrationWarning>
+      <body className={inter.className} suppressHydrationWarning dir="rtl">
         <I18nProvider>
           <ThemeProvider
             attribute="class"
             defaultTheme="light"
-            enableSystem
+            enableSystem={false}
             disableTransitionOnChange
           >
+            <PWAInstaller />
             <Navbar />
-            <main className="min-h-screen">{children}</main>
+            <main className="min-h-screen pb-[70px] md:pb-0">{children}</main>
             <Footer />
+            <BottomNav />
             <WhatsAppButton />
           </ThemeProvider>
         </I18nProvider>

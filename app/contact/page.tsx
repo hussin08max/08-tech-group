@@ -2,13 +2,9 @@
 
 import { motion } from "framer-motion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Mail, Phone, MapPin } from "lucide-react";
-import { useI18n } from "@/lib/i18n/context";
-import { HubSpotForm } from "@/components/hubspot-form";
+import { Mail, Phone, MapPin, MessageCircle } from "lucide-react";
 
 export default function ContactPage() {
-  const { t } = useI18n();
-
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <motion.div
@@ -17,93 +13,84 @@ export default function ContactPage() {
         transition={{ duration: 0.6 }}
         className="text-center mb-12"
       >
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">{t("getInTouch")}</h1>
+        <h1 className="text-4xl md:text-5xl font-bold mb-4">تواصل معنا</h1>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          {t("contactSubtitle")}
+          نحن هنا لمساعدتك. تواصل معنا من خلال أي من الطرق التالية
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-        {/* Contact Form - HubSpot Embed */}
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <Card>
-            <CardHeader>
-              <CardTitle>{t("sendMessage")}</CardTitle>
-              <CardDescription>
-                {t("contactFormDesc")}
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <HubSpotForm />
-            </CardContent>
-          </Card>
-        </motion.div>
-
+      <div className="max-w-4xl mx-auto">
         {/* Contact Information */}
         <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="space-y-6"
+          className="mb-8"
         >
           <Card>
             <CardHeader>
-              <CardTitle>{t("contactInfo")}</CardTitle>
-              <CardDescription>{t("contactChannels")}</CardDescription>
+              <CardTitle>معلومات الاتصال</CardTitle>
+              <CardDescription>تواصل معنا من خلال أي من هذه الطرق</CardDescription>
             </CardHeader>
-            <CardContent className="space-y-4">
+            <CardContent className="space-y-6">
               <div className="flex items-start space-x-4 rtl:space-x-reverse">
-                <Mail className="h-5 w-5 text-primary mt-1" />
+                <Mail className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
                 <div>
-                  <p className="font-semibold">{t("email")}</p>
+                  <p className="font-semibold">البريد الإلكتروني</p>
                   <a href="mailto:info@08techgroup.com" className="text-muted-foreground hover:text-primary transition-colors">
                     info@08techgroup.com
                   </a>
                 </div>
               </div>
               <div className="flex items-start space-x-4 rtl:space-x-reverse">
-                <Phone className="h-5 w-5 text-primary mt-1" />
+                <Phone className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
                 <div>
-                  <p className="font-semibold">{t("phone")}</p>
-                  <a href="tel:+971588966841" className="text-muted-foreground hover:text-primary transition-colors">
-                    +971 588966841
+                  <p className="font-semibold">الهاتف</p>
+                  <a href="tel:+249917897809" className="text-muted-foreground hover:text-primary transition-colors">
+                    +249 917 897 809
                   </a>
                 </div>
               </div>
               <div className="flex items-start space-x-4 rtl:space-x-reverse">
-                <MapPin className="h-5 w-5 text-primary mt-1" />
+                <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
                 <div>
-                  <p className="font-semibold">{t("location")}</p>
+                  <p className="font-semibold">الموقع</p>
                   <p className="text-muted-foreground">
-                    {t("locationDubai")}
+                    السودان
                   </p>
                 </div>
               </div>
             </CardContent>
           </Card>
+        </motion.div>
 
-          {/* WhatsApp CTA */}
-          <Card className="bg-green-50 dark:bg-green-950 border-green-200 dark:border-green-800">
+        {/* Volunteer CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <Card className="bg-primary/5 border-primary/20">
             <CardHeader>
-              <CardTitle className="text-green-800 dark:text-green-200">{t("quickContact")}</CardTitle>
-              <CardDescription className="text-green-700 dark:text-green-300">
-                {t("chatInstantly")}
+              <div className="flex items-center gap-2 mb-2">
+                <MessageCircle className="h-6 w-6 text-primary" />
+                <CardTitle>انضم إلى المبادرة</CardTitle>
+              </div>
+              <CardDescription>
+                إذا كنت تريد الانضمام إلى المبادرة كمتطوع، تواصل معنا عبر واتساب بالرقم المذكور أعلاه
               </CardDescription>
             </CardHeader>
             <CardContent>
               <a
-                href="https://wa.me/971588966841?text=Hi%20I%20want%20to%20order%20a%20service"
+                href="https://wa.me/249917897809?text=مرحباً، أريد الانضمام إلى المبادرة كمتطوع"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center w-full px-4 py-2 bg-[#25D366] text-white rounded-md hover:bg-[#20BA5A] transition-colors"
               >
-                {t("openWhatsApp")}
+                <MessageCircle className="h-5 w-5 ml-2" />
+                تواصل عبر واتساب
               </a>
             </CardContent>
           </Card>
@@ -112,4 +99,3 @@ export default function ContactPage() {
     </div>
   );
 }
-

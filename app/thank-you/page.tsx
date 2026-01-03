@@ -100,13 +100,13 @@ export default function ThankYouPage() {
                     </a>
                   </Button>
                   <Button asChild variant="outline" className="flex-1">
-                    <a href="tel:+971588966841">
+                    <a href="tel:+249917897809">
                       <Phone className="h-4 w-4 mr-2 rtl:ml-2 rtl:mr-0" />
                       {t("callUs")}
                     </a>
                   </Button>
                   <Button asChild className="flex-1 bg-[#25D366] hover:bg-[#20BA5A]">
-                    <a href="https://wa.me/971588966841?text=Hi%20I%20just%20submitted%20an%20order" target="_blank" rel="noopener noreferrer">
+                    <a href="https://wa.me/249917897809?text=مرحباً، لقد قمت بتقديم طلب" target="_blank" rel="noopener noreferrer">
                       {t("openWhatsApp")}
                     </a>
                   </Button>

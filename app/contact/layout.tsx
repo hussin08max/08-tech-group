@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Us - Digital Agency UAE | Get In Touch",
-  description: "Contact our digital services agency in the UAE. Email, phone, WhatsApp, or fill out our contact form. We're here to help with your project.",
+  title: "تواصل معنا - نبني السودان بالكود",
+  description: "تواصل معنا من خلال البريد الإلكتروني أو الهاتف أو واتساب. نحن هنا لمساعدتك.",
 };
 
 export default function ContactLayout({

@@ -3,7 +3,7 @@ import { MetadataRoute } from 'next'
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://uaedigital.ae' // Replace with your actual domain
+  const baseUrl = 'https://08techgroup.com' // Replace with your actual domain
 
   return [
     {

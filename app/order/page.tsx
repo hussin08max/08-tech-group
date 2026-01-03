@@ -49,7 +49,7 @@ export default function OrderPage() {
                 className="w-full border-green-600 text-green-700 hover:bg-green-100 dark:hover:bg-green-900"
               >
                 <a
-                  href="https://wa.me/971588966841?text=Hi, I want to order a service. Please contact me."
+                  href="https://wa.me/249917897809?text=مرحباً، أريد طلب خدمة. يرجى التواصل معي."
                   target="_blank"
                   rel="noopener noreferrer"
                 >

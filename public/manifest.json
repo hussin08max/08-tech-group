@@ -1,0 +1,21 @@
+{
+  "name": "نبني السودان بالكود - مبادرة تقنية سودانية",
+  "short_name": "نبني السودان",
+  "description": "مبادرة تطوعية غير ربحية هدفها استخدام التقنية في خدمة المجتمع السوداني",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fef9f0",
+  "theme_color": "#2d6a4f",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "400x160",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["social", "technology"],
+  "lang": "ar",
+  "dir": "rtl"
+}
